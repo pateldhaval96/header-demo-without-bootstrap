@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>How To create Responsive Navbar with HTML CSS without Bootstrap</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+}
+.brand-logo img {
+    max-width: 50px !important;
+}
+header {
+    height: 100%;
+    width: 100%;
+    float: left;
+    background: white;
+    padding: 0 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.navigation .link-text:hover {
+    background: linear-gradient(0deg,#05b68a 0,#3ba2c1 99%,#3ba2c1);
+    border: none!important;
+    border-radius: 50px;
+    color: white;
+}
+.brand-logo {
+    max-width: 75px;
+    float: left;
+    padding: 14px 0px;
+}
+.brand-logo img {
+    max-width: 100%;
+}
+.navigation {
+    margin: 0px;
+    float: right;
+}
+.navigation li {
+    list-style: none;
+    float: left;
+}
+.navigation li a {
+    color: #53b4a2;
+    padding: 15px 40px;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+}
+.navigation li a i {
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+.show-menu-btn,
+.hide-menu-btn {
+    transition: 0.4s;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+.show-menu-btn {
+    margin: 0px;
+    float: right;
+}
+.show-menu-btn i {
+    line-height: 100px;
+    color: #3ba2c1;
+}
+.navigation a:hover,
+.show-menu-btn:hover,
+.hide-menu-btn:hover {
+    color: #00ff0a;
+}
+#toggle-btn {
+    position: absolute;
+    visibility: hidden;
+    z-index: -1111;
+}
+.link-text.joinnow-btn {
+    background-color: #0285de;
+    color: white;
+}
+
+/*-- Responsive CSS --*/
+@media screen and (max-width:991px) {
+    header {
+        display: unset !important;
+    }
+    .navigation li a {
+        color: white;
+    }
+    .navigation .link-text:hover {
+        background: unset !important;
+    }
+    .link-text.joinnow-btn {
+    background-color: #0285de;
+    color: white;
+    max-width: fit-content;
+    margin-left: 15px;
+    border-radius: 10px;
+    padding: 14px 25px;
+    margin-top: 5px;
+}
+.show-menu-btn,
+.hide-menu-btn {
+    display: block;
+}
+.navigation {
+    position: fixed;
+    width: 100%;
+    /*height: 100vh;*/
+    background: linear-gradient(0deg,#05b68a 0,#3ba2c1 99%,#3ba2c1);
+    top: -100%;
+    left: 0;
+    padding: 50px 0px;
+    transition: 1s;
+}
+.navigation li {
+    width: 100%;
+}
+.navigation li a {
+    padding: 15px 15px;
+    text-align: left;
+}
+.navigation li a i {
+    width: auto;
+    font-size: 20px;
+}
+.hide-menu-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+#toggle-btn:checked ~ nav .navigation {
+    top: 0px;
+}
+}
+</style>    
+</head>
+<body data-rsssl=1>
+    <header>
+        <div class="brand-logo">
+            <a href="#"><img src="image/main-logo.png" alt="Brand Logo"></a>
+        </div>
+
+        <input type="checkbox" id="toggle-btn">
+        <label for="toggle-btn" class="show-menu-btn"><i class="fas fa-bars"></i></label>
+
+        <nav>
+            <ul class="navigation">
+                <li><a href="#" class="link-text">Home</a></li>
+                <li><a href="#" class="link-text">Individuals</a></li>
+                <li><a href="#" class="link-text">Doctor</a></li>
+                <li><a href="#" class="link-text">Blog</a></li>
+                <li><a href="#" class="link-text">Login</a></li>
+                <li><a href="#" class="link-text joinnow-btn">Join Now</a></li>
+                <label for="toggle-btn" class="hide-menu-btn"><i class="fas fa-times"></i></label>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
+
+
+
+
+
+
+<!-- https://www.markuptag.com/responsive-navbar-with-html-css-without-bootstrap/ -->
